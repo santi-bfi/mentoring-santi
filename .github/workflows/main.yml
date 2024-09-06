@@ -3,7 +3,7 @@ name: run cypress automation
 on: push
 
 jobs:
-  install:
+  cypress-run:
     runs-on: ubuntu-latest
     steps:
 
