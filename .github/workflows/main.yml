@@ -18,7 +18,7 @@ jobs:
       - name: cypress run
         uses: cypress-io/github-action@v6
         with:
-          command: npx cypress run --spec cypress/e2e/Advanced/todo.cy.js
+          command: npx cypress run --spec cypress/e2e/Started/todo.cy.js
      
   
           
