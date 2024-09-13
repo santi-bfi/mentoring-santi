@@ -3,7 +3,7 @@ name: Manual Workflow
 on:
   workflow_dispatch:
     inputs:
-      logLevel:
+      squad:
         description: 'select folder'
         required: true
         default: 'Advanced'
@@ -11,6 +11,9 @@ on:
         options:
           - Advanced
           - Started
+
+  schedule: 
+    - cron: '00 09 * * FRI' 
 
 jobs:
   cypress-run:
@@ -25,13 +28,13 @@ jobs:
           node-version: '20'
           
       - name: cypress run Advanced
-        if: ${{ inputs.logLevel == 'Advanced'}}
+        if: ${{ inputs.squad == 'Advanced'}}
         uses: cypress-io/github-action@v6
         with:
           command: npx cypress run --spec cypress/e2e/Advanced
 
       - name: cypress run Started
-        if: ${{ inputs.logLevel == 'Started'}}
+        if: ${{ inputs.squad == 'Started'}}
         uses: cypress-io/github-action@v6
         with:
           command: npx cypress run --spec cypress/e2e/Started
