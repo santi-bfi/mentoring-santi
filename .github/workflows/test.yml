@@ -3,6 +3,16 @@ name: Manual Workflow
 on:
   workflow_dispatch:
 
+  inputs:
+      logLevel:
+        description: 'select folder'
+        required: true
+        default: 'Advanced'
+        type: choice
+        options:
+          - Advanced
+          - Started
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
