@@ -2,9 +2,7 @@ name: Manual Workflow
 
 on:
   workflow_dispatch:
-
-  inputs:
-      logLevel:
+    inputs:
         description: 'select folder'
         required: true
         default: 'Advanced'
