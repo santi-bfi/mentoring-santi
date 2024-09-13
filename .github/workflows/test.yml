@@ -24,7 +24,15 @@ jobs:
         with: 
           node-version: '20'
           
-      - name: cypress run
+      - name: cypress run Advanced
+        if: ${{ github.event.logLevel == 'Advanced'}}
         uses: cypress-io/github-action@v6
         with:
-          command: npx cypress run --spec cypress/e2e/1-getting-started/todo.cy.js
+          command: npx cypress run --spec cypress/e2e/Advanced
+
+      - name: cypress run Started
+        if: ${{ github.event.logLevel == 'Started'}}
+        uses: cypress-io/github-action@v6
+        with:
+          command: npx cypress run --spec cypress/e2e/Started
+
