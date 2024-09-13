@@ -2,12 +2,13 @@ name: schedular
 
 on:
   schedule: 
-    - cron: '*/3 * * * *' 
+    - cron: '*/2 * * * *' 
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
+
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -16,8 +17,7 @@ jobs:
         with: 
           node-version: '20'
           
-      - name: cypress run Advanced
+      - name: cypress run Started
         uses: cypress-io/github-action@v6
         with:
-          command: npx cypress run --spec cypress/e2e/Advanced
-
+          command: npx cypress run --spec cypress/e2e/Started
