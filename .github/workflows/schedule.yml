@@ -2,7 +2,7 @@ name: schedular
 
 on:
     schedule: 
-        - cron: '20 09 * * FRI' 
+        - cron: '5 * * * *' 
 
 jobs:
   cypress-run:
